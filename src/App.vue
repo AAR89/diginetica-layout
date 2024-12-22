@@ -40,7 +40,7 @@ html {
 #app {
   // text-align: center;
   // border: solid 4px black;
-  margin: 0rem 6.25rem 2.25rem 6.25rem;
+  // margin: 0rem 6.25rem 2.25rem 6.25rem;
   color: $color-font-main;
   font-family: Inter;
   font-size: 16px;
