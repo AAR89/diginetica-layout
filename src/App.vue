@@ -51,7 +51,19 @@ a {
   cursor: pointer;
 }
 
+li,
+ul {
+  list-style-type: none;
+  cursor: pointer;
+}
+
 button {
   cursor: pointer;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 </style>
