@@ -70,6 +70,33 @@
         v-model="searchValue"
       />
     </div>
+    <section class="checkbox-section">
+      <div
+        class="filter-checkbox"
+        v-for="atribute in atributes"
+        :key="atribute.id"
+      >
+        <div class="filter-checkbox-block">
+          <input class="filter-checkbox-block-main" type="checkbox" />
+          <p class="filter-checkbox-block-title">{{ atribute }}</p>
+        </div>
+        <span class="filter-checkbox-quantity">{{ quntity }}</span>
+      </div>
+    </section>
+    <h3 class="filter-size-title">Размер</h3>
+    <section class="checkbox-section">
+      <div
+        class="filter-checkbox"
+        v-for="atribute in atributes"
+        :key="atribute.id"
+      >
+        <div class="filter-checkbox-block">
+          <input class="filter-checkbox-block-main" type="checkbox" />
+          <p class="filter-checkbox-block-title">{{ atribute }}</p>
+        </div>
+        <span class="filter-checkbox-quantity">{{ quntity }}</span>
+      </div>
+    </section>
   </section>
 </template>
 <!-- eslint-disable prettier/prettier -->
@@ -90,6 +117,17 @@ export default {
       priceFrom: null,
       priceTo: null,
       searchValue: null,
+      atributes: [
+        "Атрибут 1",
+        "Атрибут 2",
+        "Атрибут 3",
+        "Атрибут 4",
+        "Атрибут 5",
+        "Атрибут 6",
+        "Атрибут 7",
+        "Атрибут 8",
+        "Атрибут 9",
+      ],
     };
   },
   methods: {
@@ -201,6 +239,7 @@ export default {
       text-decoration-skip-ink: none;
       outline: none;
       height: 36px;
+      padding-left: 8px;
     }
   }
 
@@ -250,6 +289,67 @@ export default {
       text-decoration-skip-ink: none;
       outline: none;
     }
+  }
+
+  .checkbox-section {
+    margin-top: 16px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 260px;
+    width: 100%;
+    padding-right: 8px;
+  }
+
+  .filter-checkbox {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    .filter-checkbox-block {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      .filter-checkbox-block-main {
+        width: 20px;
+        height: 20px;
+        border: 1px;
+        background: #7397f5;
+        border: 1px solid #7397f5;
+      }
+
+      .filter-checkbox-block-title {
+        font-family: PT Sans;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        color: #333333;
+      }
+    }
+
+    .filter-checkbox-quantity {
+      font-family: PT Sans;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14px;
+      text-align: right;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+      color: #aaaaaa;
+    }
+  }
+
+  .filter-size-title {
+    font-family: PT Sans;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 28px;
   }
 }
 </style>
