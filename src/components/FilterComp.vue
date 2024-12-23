@@ -10,7 +10,10 @@
         <li
           v-for="item in options"
           :key="item"
-          class="dropdown-option"
+          :class="{
+            'dropdown-option active': activeOption === item,
+            'dropdown-option': activeOption !== item,
+          }"
           @click="selectOption(item)"
         >
           <span class="select-label">{{ item }}</span>
@@ -128,6 +131,7 @@ export default {
         "Атрибут 8",
         "Атрибут 9",
       ],
+      activeOption: null,
     };
   },
   methods: {
@@ -136,6 +140,7 @@ export default {
     },
     selectOption(item) {
       this.label = item;
+      this.activeOption = item;
       // this.isDropdownOpen = false;
       // this.toggleDropdown();
     },
@@ -149,6 +154,7 @@ export default {
         .forEach((checkbox) => {
           checkbox.checked = false;
         });
+      this.activeOption = null;
     },
   },
 };
@@ -210,6 +216,10 @@ export default {
         &:hover {
           background-color: #e2efff;
         }
+      }
+      .dropdown-option.active {
+        background-color: #e2efff;
+        font-weight: bold;
       }
     }
   }
