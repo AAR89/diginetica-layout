@@ -144,7 +144,7 @@ export default {
     display: flex;
     justify-content: space-between;
     height: 48px;
-    width: 480px;
+    width: 1015px;
     padding-left: 10px;
     border-radius: 10px;
     gap: 8px;
