@@ -287,4 +287,10 @@ input {
     flex-direction: column;
   }
 }
+
+@media (max-width: 740px) {
+  .header-sections--search {
+    width: 100%;
+  }
+}
 </style>

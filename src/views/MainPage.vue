@@ -44,5 +44,8 @@ export default {
 }
 
 @media (max-width: 860px) {
+  .main-page {
+    margin: 10px 20px 10px 20px;
+  }
 }
 </style>

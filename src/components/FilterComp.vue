@@ -21,85 +21,87 @@
         </li>
       </ul>
     </div>
-    <h3 class="filter-price-title">Цена</h3>
     <div class="filter-price-inputs-block">
-      <input
-        class="filter-price-input"
-        type="number"
-        placeholder="от"
-        v-model="priceFrom"
-      />
-      <p class="select-label-quantity">-</p>
-      <input
-        class="filter-price-input"
-        type="number"
-        placeholder="от"
-        v-model="priceTo"
-      />
-    </div>
-    <div class="filter-brand-block">
-      <h2 class="filter-brand-block-title">Бренд</h2>
-      <div class="filter-brand-block-clean-button" @click="cleanFilters">
-        Очистить
+      <h3 class="filter-price-title">Цена</h3>
+      <div class="filter-inputs">
+        <input
+          class="filter-price-input"
+          type="number"
+          placeholder="от"
+          v-model="priceFrom"
+        />
+        <p class="select-label-quantity">-</p>
+        <input
+          class="filter-price-input"
+          type="number"
+          placeholder="до"
+          v-model="priceTo"
+        />
       </div>
-    </div>
-    <div class="filter-search">
-      <svg
-        width="16"
-        height="16"
-        viewBox="0 0 16 16"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g opacity="0.3">
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M7.33333 2.75C4.80203 2.75 2.75 4.80203 2.75 7.33333C2.75 9.86464 4.80203 11.9167 7.33333 11.9167C9.86464 11.9167 11.9167 9.86464 11.9167 7.33333C11.9167 4.80203 9.86464 2.75 7.33333 2.75ZM1.25 7.33333C1.25 3.9736 3.9736 1.25 7.33333 1.25C10.6931 1.25 13.4167 3.9736 13.4167 7.33333C13.4167 10.6931 10.6931 13.4167 7.33333 13.4167C3.9736 13.4167 1.25 10.6931 1.25 7.33333Z"
-            fill="#333333"
-          />
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M10.5698 10.5696C10.8627 10.2768 11.3375 10.2768 11.6304 10.5696L14.5304 13.4696C14.8233 13.7625 14.8233 14.2374 14.5304 14.5303C14.2375 14.8232 13.7627 14.8232 13.4698 14.5303L10.5698 11.6303C10.2769 11.3374 10.2769 10.8625 10.5698 10.5696Z"
-            fill="#333333"
-          />
-        </g>
-      </svg>
-      <input
-        type="text"
-        class="filter-search-input"
-        placeholder="Поиск"
-        v-model="searchValue"
-      />
-    </div>
-    <section class="checkbox-section">
-      <div
-        class="filter-checkbox"
-        v-for="atribute in atributes"
-        :key="atribute.id"
-      >
-        <div class="filter-checkbox-block">
-          <input class="filter-checkbox-block-main" type="checkbox" />
-          <p class="filter-checkbox-block-title">{{ atribute }}</p>
+      <div class="filter-brand-block">
+        <h2 class="filter-brand-block-title">Бренд</h2>
+        <div class="filter-brand-block-clean-button" @click="cleanFilters">
+          Очистить
         </div>
-        <span class="filter-checkbox-quantity">{{ quntity }}</span>
       </div>
-    </section>
-    <h3 class="filter-size-title">Размер</h3>
-    <section class="checkbox-section">
-      <div
-        class="filter-checkbox"
-        v-for="atribute in atributes"
-        :key="atribute.id"
-      >
-        <div class="filter-checkbox-block">
-          <input class="filter-checkbox-block-main" type="checkbox" />
-          <p class="filter-checkbox-block-title">{{ atribute }}</p>
+      <div class="filter-search">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g opacity="0.3">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M7.33333 2.75C4.80203 2.75 2.75 4.80203 2.75 7.33333C2.75 9.86464 4.80203 11.9167 7.33333 11.9167C9.86464 11.9167 11.9167 9.86464 11.9167 7.33333C11.9167 4.80203 9.86464 2.75 7.33333 2.75ZM1.25 7.33333C1.25 3.9736 3.9736 1.25 7.33333 1.25C10.6931 1.25 13.4167 3.9736 13.4167 7.33333C13.4167 10.6931 10.6931 13.4167 7.33333 13.4167C3.9736 13.4167 1.25 10.6931 1.25 7.33333Z"
+              fill="#333333"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M10.5698 10.5696C10.8627 10.2768 11.3375 10.2768 11.6304 10.5696L14.5304 13.4696C14.8233 13.7625 14.8233 14.2374 14.5304 14.5303C14.2375 14.8232 13.7627 14.8232 13.4698 14.5303L10.5698 11.6303C10.2769 11.3374 10.2769 10.8625 10.5698 10.5696Z"
+              fill="#333333"
+            />
+          </g>
+        </svg>
+        <input
+          type="text"
+          class="filter-search-input"
+          placeholder="Поиск"
+          v-model="searchValue"
+        />
+      </div>
+      <section class="checkbox-section">
+        <div
+          class="filter-checkbox"
+          v-for="atribute in atributes"
+          :key="atribute.id"
+        >
+          <div class="filter-checkbox-block">
+            <input class="filter-checkbox-block-main" type="checkbox" />
+            <p class="filter-checkbox-block-title">{{ atribute }}</p>
+          </div>
+          <span class="filter-checkbox-quantity">{{ quntity }}</span>
         </div>
-        <span class="filter-checkbox-quantity">{{ quntity }}</span>
-      </div>
-    </section>
+      </section>
+      <h3 class="filter-size-title">Размер</h3>
+      <section class="checkbox-section">
+        <div
+          class="filter-checkbox"
+          v-for="atribute in atributes"
+          :key="atribute.id"
+        >
+          <div class="filter-checkbox-block">
+            <input class="filter-checkbox-block-main" type="checkbox" />
+            <p class="filter-checkbox-block-title">{{ atribute }}</p>
+          </div>
+          <span class="filter-checkbox-quantity">{{ quntity }}</span>
+        </div>
+      </section>
+    </div>
   </section>
 </template>
 <!-- eslint-disable prettier/prettier -->
@@ -242,18 +244,23 @@ export default {
     font-weight: 700;
     line-height: 20px;
     text-align: center;
-    margin-top: 100px;
-    margin-bottom: -50px;
+    margin: 0;
   }
 
   .filter-price-inputs-block {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     gap: 16px;
-    align-items: center;
+    width: 100%;
 
+    .filter-inputs {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 5px;
+    }
     .filter-price-input {
-      width: 100%;
+      width: 40%;
       gap: 6px;
       border-radius: 4px;
       opacity: 0px;
@@ -264,7 +271,7 @@ export default {
       text-underline-position: from-font;
       text-decoration-skip-ink: none;
       outline: none;
-      height: 36px;
+      height: 30px;
       padding-left: 8px;
     }
   }
@@ -300,7 +307,6 @@ export default {
   .filter-search {
     display: flex;
     gap: 8px;
-    width: 100%;
     height: 36px;
     border: 1px solid #d5d5d5;
     border-radius: 4px;
@@ -378,7 +384,6 @@ export default {
     font-weight: 700;
     line-height: 20px;
     text-align: center;
-    margin-top: 28px;
   }
 }
 </style>
