@@ -2,7 +2,7 @@
   <header class="header">
     <div class="header-main">
       <section class="header-sections">
-        <div class="header-sections--logo-block">
+        <div v-if="width > 900" class="header-sections--logo-block">
           <svg
             width="18"
             height="18"
@@ -66,7 +66,16 @@ export default {
     return {
       isSearchButtonVisible: false,
       searchQuery: "",
+      width: 0,
     };
+  },
+  created() {
+    const onResize = () => (this.width = window.innerWidth);
+    onResize();
+    window.addEventListener("resize", onResize);
+    this.$on("hook:beforeDestroy", () =>
+      window.removeEventListener("resize", onResize)
+    );
   },
   methods: {
     handleInput(event) {
@@ -221,5 +230,61 @@ input {
   text-decoration-skip-ink: none;
   color: #5a5a5a;
   outline: none;
+}
+
+@media (max-width: 1892px) {
+  .header-sections--search {
+    width: 900px;
+  }
+
+  .header-sections--input-logo-section {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1772px) {
+  .header-sections--search {
+    width: 800px;
+  }
+}
+
+@media (max-width: 1675px) {
+  .header-sections--search {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 1566px) {
+  .header-sections--search {
+    width: 600px;
+  }
+}
+
+@media (max-width: 1470px) {
+  .header-sections--search {
+    width: 500px;
+  }
+}
+
+@media (max-width: 1375px) {
+  .header-sections--search {
+    width: 400px;
+  }
+
+  .header-sections--input-logo-section {
+    width: 40%;
+  }
+}
+
+@media (max-width: 1285px) {
+  .header-sections--search {
+    width: 300px;
+  }
+}
+
+@media (max-width: 740px) {
+  .header-main {
+    flex-direction: column;
+  }
 }
 </style>

@@ -36,4 +36,13 @@ export default {
   display: flex;
   gap: 36px;
 }
+
+@media (max-width: 1285px) {
+  .main-page {
+    margin: 24px 40px 32px 40px;
+  }
+}
+
+@media (max-width: 860px) {
+}
 </style>

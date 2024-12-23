@@ -1,6 +1,6 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
-  <section class="filter-main">
+  <section v-if="width > 700" class="filter-main">
     <div class="custom-select">
       <div class="select-label">
         <span class="select-label">{{ label }}</span>
@@ -132,7 +132,16 @@ export default {
         "Атрибут 9",
       ],
       activeOption: null,
+      width: 0,
     };
+  },
+  created() {
+    const onResize = () => (this.width = window.innerWidth);
+    onResize();
+    window.addEventListener("resize", onResize);
+    this.$on("hook:beforeDestroy", () =>
+      window.removeEventListener("resize", onResize)
+    );
   },
   methods: {
     toggleDropdown() {
@@ -233,15 +242,14 @@ export default {
     font-weight: 700;
     line-height: 20px;
     text-align: center;
-    margin-top: 125px;
-    margin-bottom: -20px;
+    margin-top: 100px;
+    margin-bottom: -50px;
   }
 
   .filter-price-inputs-block {
     display: flex;
     justify-content: space-around;
     gap: 16px;
-    margin-top: 8px;
     align-items: center;
 
     .filter-price-input {
@@ -266,6 +274,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 20px;
 
     &-title {
       font-family: PT Sans;
@@ -313,7 +322,6 @@ export default {
   }
 
   .checkbox-section {
-    margin-top: 16px;
     overflow-y: scroll;
     overflow-x: hidden;
     height: 260px;

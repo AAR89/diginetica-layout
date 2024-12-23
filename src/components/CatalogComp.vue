@@ -243,4 +243,18 @@ export default {
     }
   }
 }
+
+@media (max-width: 1185px) {
+  .catalog-main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 870px) {
+  .catalog-main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 </style>
