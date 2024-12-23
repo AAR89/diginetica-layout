@@ -47,6 +47,7 @@ html {
   color: $color-font-main;
   font-family: Inter;
   font-size: 16px;
+  margin: 0 auto;
 }
 
 a {

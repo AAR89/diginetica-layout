@@ -1,5 +1,5 @@
 <template>
-  <div class="MainPage">
+  <div class="main-page">
     <HeaderComp />
     <div class="content">
       <FilterComp />
@@ -9,7 +9,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import HeaderComp from "@/components/HeaderComp.vue";
 import FilterComp from "@/components/FilterComp.vue";
 import CatalogComp from "@/components/CatalogComp.vue";
@@ -25,8 +24,15 @@ export default {
 </script>
 
 <style lang="scss">
+.main-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 24px 100px 32px 100px;
+}
+
 .content {
-  margin: 24px 100px 100px 32px;
+  margin-top: 24px;
   display: flex;
   gap: 36px;
 }

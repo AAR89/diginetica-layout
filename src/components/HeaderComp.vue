@@ -84,13 +84,15 @@ export default {
 
 <style scoped lang="scss">
 .header {
+  width: 100%;
+
   &-main {
-    padding: 0.75rem 0rem 0rem 0.75rem;
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 1.25rem;
+    justify-content: space-between;
   }
+
   &-sections,
   &--logo-block,
   .header-nav {
@@ -164,6 +166,7 @@ export default {
       align-items: center;
       gap: 8px;
       padding-right: 3px;
+
       .header-delete-circle {
         width: 20px;
         height: 20px;
@@ -173,6 +176,7 @@ export default {
         background: #cbcbcb;
         cursor: pointer;
       }
+
       .header-search-button {
         width: 70px;
         height: 44px;

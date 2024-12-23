@@ -1,5 +1,4 @@
 <!-- eslint-disable prettier/prettier -->
-<!-- eslint-disable prettier/prettier -->
 <template>
   <div class="catalog-main">
     <div v-for="card in cards" :key="card.id" class="card">
@@ -71,7 +70,7 @@ export default {
       maxLength: 67,
       selectorDescription: ".card-info-description",
       price: "5 990",
-      cards: 10,
+      cards: 12,
     };
   },
 
@@ -99,8 +98,10 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 24px;
+
   .card {
     width: 333px;
+    width: auto;
     display: flex;
     flex-direction: column;
 

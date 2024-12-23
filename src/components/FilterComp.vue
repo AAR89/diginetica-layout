@@ -166,12 +166,14 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
   .custom-select {
     width: 100%;
     padding: 8px;
     cursor: pointer;
     position: relative;
     user-select: none;
+    height: 12px;
 
     .select-label {
       display: flex;
@@ -217,6 +219,7 @@ export default {
           background-color: #e2efff;
         }
       }
+
       .dropdown-option.active {
         background-color: #e2efff;
         font-weight: bold;
@@ -230,7 +233,8 @@ export default {
     font-weight: 700;
     line-height: 20px;
     text-align: center;
-    margin-top: 135px;
+    margin-top: 125px;
+    margin-bottom: -20px;
   }
 
   .filter-price-inputs-block {
@@ -283,14 +287,17 @@ export default {
       color: #aaaaaa;
     }
   }
+
   .filter-search {
     display: flex;
     gap: 8px;
     width: 100%;
+    height: 36px;
     border: 1px solid #d5d5d5;
     border-radius: 4px;
-    padding: 10px 12px 10px 12px;
-    margin-top: 16px;
+    padding: 0px 0px 0px 12px;
+    align-items: center;
+
     .filter-search-input {
       gap: 8px;
       border: 0px solid #ffffff;
