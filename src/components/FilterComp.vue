@@ -144,6 +144,11 @@ export default {
       this.priceTo = null;
       this.label = this.cleanLabel;
       this.searchValue = null;
+      document
+        .querySelectorAll(".filter-checkbox-block-main")
+        .forEach((checkbox) => {
+          checkbox.checked = false;
+        });
     },
   },
 };
@@ -152,7 +157,6 @@ export default {
 <style lang="scss">
 .filter-main {
   width: 280px;
-  // border: 1px solid black;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
