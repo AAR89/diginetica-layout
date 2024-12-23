@@ -154,7 +154,7 @@ export default {
   &-sections--search {
     display: flex;
     justify-content: space-between;
-    height: 48px;
+    height: 46px;
     width: 1015px;
     padding-left: 10px;
     border-radius: 10px;
